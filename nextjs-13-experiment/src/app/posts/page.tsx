@@ -8,9 +8,14 @@ interface Post {
   body: string;
 }
 
+/** used to add meta data to the posts route */
+export const metadata = {
+  title: "Posts",
+  description: "Lists of posts",
+};
 const Posts = async () => {
   const data = await fetch(
-    "https://jsonplaceholder.typicode.com/posts?_limit=5"
+    "https://jsonplaceholder.typicode.com/posts?_limit=10"
   );
   const result: Post[] = await data.json();
 
