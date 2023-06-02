@@ -7,7 +7,7 @@ const PostLayout = ({
 }) => {
   return (
     <section>
-        {/* this nav section will be shown for all the routes under /posts/** */ }
+      {/* this nav section will be shown for all the routes under /posts/** */}
       <nav>Inside the postLayout</nav>
       <br />
       {children}

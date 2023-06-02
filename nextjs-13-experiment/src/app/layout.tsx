@@ -25,6 +25,7 @@ export default function RootLayout({
           <Link href="/client">Client </Link>
           <Link href="/navigation">Navigation </Link>
           <Link href="/navigation/client-navigation">Client-Navigation </Link>
+          <Link href="/post-feed-suspense">post-feed-suspense </Link>
         </nav>
         <br />
         {children}
