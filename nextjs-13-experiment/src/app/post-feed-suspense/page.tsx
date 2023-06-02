@@ -27,6 +27,19 @@ const ServiceCallComponent2 = async () => {
   return <>{result}</>;
 };
 
+const serviceCall3 = () =>
+  new Promise((resolve, reject) => {
+    setTimeout(() => {
+      reject("service call 3 failed");
+    }, 10000);
+  });
+
+const ServiceCallComponent3 = async () => {
+  const result = await serviceCall3();
+  console.log(result);
+  return <>{result}</>;
+};
+
 export default function PostSuspense() {
   return (
     <section>
@@ -37,10 +50,13 @@ export default function PostSuspense() {
       <Suspense fallback={<Loading />}>
         <ServiceCallComponent1 />
       </Suspense>
-      <br/>
+      <br />
       <Suspense fallback={<Loading />}>
         <ServiceCallComponent2 />
       </Suspense>
+      <br />
+      {/** This is used to check the error boundary */}
+       <ServiceCallComponent3 />
     </section>
   );
 }
