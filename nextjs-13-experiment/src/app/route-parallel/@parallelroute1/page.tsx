@@ -17,6 +17,7 @@ const ServiceCallComponent1 = async () => {
 export default function PostSuspense() {
   return (
     <section>
+      {/* @ts-expect-error Async Server Component */}
       <ServiceCallComponent1 />
       <br />
     </section>

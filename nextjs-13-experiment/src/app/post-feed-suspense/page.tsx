@@ -48,15 +48,17 @@ export default function PostSuspense() {
        * If we don't have the suspense both will be rendered at same time(after 10 seconds)
        */}
       <Suspense fallback={<Loading />}>
+        {/* @ts-expect-error Async Server Component */}
         <ServiceCallComponent1 />
       </Suspense>
       <br />
       <Suspense fallback={<Loading />}>
+        {/* @ts-expect-error Async Server Component */}
         <ServiceCallComponent2 />
       </Suspense>
       <br />
       {/** This is used to check the error boundary */}
-       <ServiceCallComponent3 />
+      {/* <ServiceCallComponent3 /> */}
     </section>
   );
 }
