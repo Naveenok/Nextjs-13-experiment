@@ -1,9 +1,3 @@
 export default async function Home() {
-
-
-  return (
-    <>
-      Hello Next js 13
-    </>
-  );
+  return <>Hello Next js 13</>;
 }

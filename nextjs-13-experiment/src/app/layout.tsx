@@ -12,8 +12,12 @@ export const metadata = {
 
 export default function RootLayout({
   children,
+  parallelroute1,
+  parallelroute2,
 }: {
   children: React.ReactNode;
+  parallelroute1?: any;
+  parallelroute2?: any;
 }) {
   return (
     <html lang="en">
@@ -28,7 +32,15 @@ export default function RootLayout({
           <Link href="/post-feed-suspense">post-feed-suspense </Link>
         </nav>
         <br />
-        {children}
+        <>
+          {children}
+          {/** these slots will be rendered paralelly on common route but if route is
+           * missed in any slot then default.tsx file will be rendered and if that file
+           * is not there then 404 page will be rendered
+           */}
+          {parallelroute1}
+          {parallelroute2}
+        </>
       </body>
     </html>
   );
