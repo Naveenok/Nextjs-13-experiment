@@ -1,5 +1,3 @@
-import { Suspense } from "react";
-
 const serviceCall1 = (): Promise<string> =>
   new Promise((resolve) => {
     setTimeout(() => {
