@@ -32,6 +32,7 @@ export default function RootLayout({
             login-interception
           </Link>
           <Link href="/parallel-data-fetching">Parallel-data-fetching </Link>
+          <Link href="/parallel-data-fetching/parallel-data-fetching-suspense">Parallel-data-fetching-suspense </Link>
         </nav>
         <br />
         <>{children}</>
