@@ -33,6 +33,7 @@ export default function RootLayout({
           </Link>
           <Link href="/parallel-data-fetching">Parallel-data-fetching </Link>
           <Link href="/parallel-data-fetching/parallel-data-fetching-suspense">Parallel-data-fetching-suspense </Link>
+          <Link href="/sequential-data-fetching">sequential-data-fetching</Link>
         </nav>
         <br />
         <>{children}</>

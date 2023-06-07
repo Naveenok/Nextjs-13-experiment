@@ -14,27 +14,21 @@ const serviceCall2 = (): Promise<string> =>
     }, 10000);
   });
 
-const ParallelDataFetching2 = async ({ promise }: any) => {
-  const data2 = await promise;
+const SequentialDataFetching2 = async () => {
+  const data2 = await serviceCall2();
 
   return <>{data2}</>;
 };
 
-export default async function ParallelDataFetching1() {
-
-  // both will start parallelly
-  const data1: Promise<string> = serviceCall1();
-  const data2: Promise<string> = serviceCall2();
-
-  // when this gets resolved the other promise would have gone half way through
-  const response1 = await data1;
+export default async function SequentialDataFetching1() {
+  const response1 = await serviceCall1();
   return (
     <section>
       {response1}
       <br />
       <Suspense fallback={<div>Loading...</div>}>
         {/* @ts-expect-error Async Server Component */}
-        <ParallelDataFetching2 promise={data2} />
+        <SequentialDataFetching2 />
       </Suspense>
     </section>
   );
